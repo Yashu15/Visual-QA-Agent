@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "visual-qa-agent"
+version = "0.1.0"
+description = "Local storefront visual regression testing with Playwright and Ollama"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "playwright>=1.50",
+    "Pillow>=10.0",
+]
+
+[project.scripts]
+visual-qa = "visual_qa_agent.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+visual_qa_agent = ["storefront.html"]
